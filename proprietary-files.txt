@@ -1,3 +1,44 @@
+# Reflect current vendor repo; needs sorting
+-lib64/libril.so
+-lib/libril.so
+-app/embms/embms.apk
+-priv-app/com.qualcomm.location/com.qualcomm.location.apk
+-priv-app/ConnMO/ConnMO.apk
+-priv-app/DCMO/DCMO.apk
+-priv-app/DMService/DMService.apk
+-priv-app/SprintDM/SprintDM.apk
+-priv-app/QtiTetherService/QtiTetherService.apk
+#-app/DaydreamHome/DaydreamHome.apk
+#-app/VrInputMethod/VrInputMethod.apk
+#-app/VrYoutube/VrYoutube.apk
+#-vendor/app/colorservice/colorservice.apk
+etc/acdbdata/griffin/Handset_cal.acdb
+etc/acdbdata/sheridan/Handset_cal.acdb
+#etc/data/dsi_config.xml
+#etc/data/netmgr_config.xml
+#etc/data/qmi_config.xml
+etc/permissions/izat.xt.srv.xml
+etc/permissions/com.motorola.actions.xml
+etc/permissions/com.motorola.aov.xml
+etc/permissions/com.motorola.cameraone.xml
+etc/permissions/com.motorola.haptic.xml
+etc/permissions/com.motorola.hw.sensorhub.xml
+etc/permissions/com.motorola.mod.protocols.xml
+etc/permissions/com.motorola.mod.xml
+etc/permissions/com.motorola.moto.xml
+etc/permissions/com.motorola.motodisplay.xml
+etc/permissions/qti_permissions.xml
+framework/com.qti.dpmframework.jar
+framework/izat.xt.srv.jar
+framework/qti-telephony-common.jar
+lib64/hw/sensors.msm8996.so
+lib/hw/sensors.msm8996.so
+#vendor/lib64/libtime_genoff.so
+#vendor/lib/libtime_genoff.so
+vendor/lib64/libuiblur.so
+vendor/lib/libaptXHD-1.0.0-rel-Android21-ARMv7A.so
+bin/rild
+
 # ADSP
 bin/adspd
 bin/adsprpcd
@@ -163,14 +204,13 @@ vendor/lib64/libxml.so
 bin/qseecomd
 vendor/bin/qseeproxydaemon
 vendor/lib/libcppf.so
-vendor/lib/libWVStreamControlAPI_L1.so
+vendor/lib/libWVStreamControlAPI_L3.so
 vendor/lib/liboemcrypto.so
-vendor/lib/libwvdrm_L1.so
+vendor/lib/libwvdrm_L3.so
 vendor/lib/mediadrm/libwvdrmengine.so
 vendor/lib64/libSecureUILib.so
 
 
-vendor/lib/libtime_genoff.so
 vendor/lib/libQSEEComAPI.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
@@ -185,7 +225,6 @@ vendor/lib/libGPreqcancel_svc.so
 vendor/lib/libGPTEE.so
 vendor/lib/libmm-hdcpmgr.so
 vendor/lib/libmmQSM.so
-vendor/lib64/libtime_genoff.so
 vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libdrmfs.so
 vendor/lib64/libdrmtime.so
@@ -202,9 +241,6 @@ vendor/lib64/libmm-hdcpmgr.so
 vendor/lib64/libmmQSM.so
 
 # Daydream REMOVE ONCE OPENGAPPS HAS THIS
--app/DaydreamHome/DaydreamHome.apk
--app/VrInputMethod/VrInputMethod.apk
--app/VrYoutube/VrYoutube.apk
 
 # Dropbox
 lib64/libadropbox.so
@@ -378,9 +414,6 @@ bin/netmgrd
 bin/radish
 bin/rmt_storage
 bin/tftp_server
-etc/data/dsi_config.xml
-etc/data/netmgr_config.xml
-etc/data/qmi_config.xml
 etc/permissions/embms.xml
 etc/permissions/qcrilhook.xml
 framework/embmslibrary.jar
@@ -782,7 +815,6 @@ lib64/libmodmanager.so
 # Post Processing
 etc/permissions/com.qti.snapdragon.sdk.display.xml
 framework/com.qti.snapdragon.sdk.display.jar
--vendor/app/colorservice/colorservice.apk
 vendor/bin/mm-pp-dpps
 vendor/lib64/libdisp-aba.so
 vendor/lib/libdisp-aba.so
