@@ -366,7 +366,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.radio.config@1.0 \
     librmnetctl \
-    libxml2 \
     libprotobuf-cpp-full \
     libprotobuf-cpp-lite \
     libqsap_sdk
