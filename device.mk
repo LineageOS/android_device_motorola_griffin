@@ -432,8 +432,7 @@ PRODUCT_PACKAGES += \
 # libstdc++: camera.msm8996
 PRODUCT_PACKAGES += \
     libicuuc.vendor \
-    libstdc++.vendor \
-    vndk_package
+    libstdc++.vendor
 
 # WiFi HAL
 PRODUCT_PACKAGES += \
