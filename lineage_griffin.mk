@@ -28,8 +28,7 @@ $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/motorola/griffin/overlay
 
-PRODUCT_ENFORCE_RRO_TARGETS := \
-    framework-res
+PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Boot animation
 TARGET_SCREEN_HEIGHT := 2560
