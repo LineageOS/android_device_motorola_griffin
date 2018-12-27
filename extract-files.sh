@@ -23,65 +23,91 @@ VENDOR=motorola
 
 # Load extract_utils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"
-if [[ ! -d "$MY_DIR" ]]; then MY_DIR="$PWD"; fi
+if [[ ! -d "${MY_DIR}" ]]; then MY_DIR="${PWD}"; fi
 
-LINEAGE_ROOT="$MY_DIR"/../../..
+LINEAGE_ROOT="${MY_DIR}"/../../..
 
-HELPER="$LINEAGE_ROOT"/vendor/lineage/build/tools/extract_utils.sh
-if [ ! -f "$HELPER" ]; then
+HELPER="${LINEAGE_ROOT}/vendor/lineage/build/tools/extract_utils.sh"
+if [ ! -f "${HELPER}" ]; then
     echo "Unable to find helper script at $HELPER"
     exit 1
 fi
-. "$HELPER"
+source "${HELPER}"
 
-while [ "$1" != "" ]; do
-    case $1 in
-        -n | --no-cleanup )     CLEAN_VENDOR=false
-                                ;;
-        -s | --section )        shift
-                                SECTION=$1
-                                CLEAN_VENDOR=false
-                                ;;
-        * )                     SRC=$1
-                                ;;
+# Default to sanitizing the vendor folder before extraction
+CLEAN_VENDOR=true
+
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+        -n | --no-cleanup )
+            CLEAN_VENDOR=false
+            ;;
+        -k | --kang )
+                KANG="--kang"
+                ;;
+        -s | --section )
+                SECTION="${2}"; shift
+                CLEAN_VENDOR=false
+                ;;
+        * )
+                SRC="${1}"
+                ;;
     esac
     shift
 done
 
-if [ -z "$SRC" ]; then
-    SRC=adb
+if [ -z "${SRC}" ]; then
+    SRC="adb"
 fi
 
+function blob_fixup() {
+    case "${1}" in
+
+    # Patch libmmcamera2_stats_modules
+    vendor/lib/libmmcamera2_stats_modules.so)
+        sed -i "s|libgui.so|libfui.so|g" "${2}"
+        sed -i "s|/data/misc/camera|/data/vendor/qcam|g" "${2}"
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+
+    vendor/lib64/libmdmcutback.so)
+        patchelf --add-needed libqsap_shim.so "${2}"
+        ;;
+
+    vendor/lib/libjustshoot.so)
+         patchelf --add-needed libjustshoot_shim.so "${2}"
+         ;;
+
+    vendor/etc/permissions/qcrilhook.xml)
+        sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "${2}"
+        ;;
+
+    vendor/etc/permissions/telephonyservice.xml)
+        sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "${2}"
+        ;;
+
+    vendor/bin/thermal-engine)
+        sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
+        ;;
+
+    vendor/lib/libmmcamera2_sensor_modules.so)
+        sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "${2}"
+        ;;
+
+    vendor/lib/libmmcamera_vstab_module.so | vendor/lib/libmot_ois_data.so)
+        patchelf --remove-needed libandroid.so "${2}"
+        ;;
+    esac
+}
+
 # Initialize the helper
-setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
+setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
 
-extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
-extract "$MY_DIR"/proprietary-files_griffin.txt "$SRC" "$SECTION"
+extract "${MY_DIR}/proprietary-files.txt" "${SRC}" \
+        "${KANG}" --section "${SECTION}"
 
-BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
+# setup_vendor "${DEVICE}" "${VENDOR}" "${LINEAGE_ROOT}" false "${CLEAN_VENDOR}"
+extract "${MY_DIR}/proprietary-files_griffin.txt" "${SRC}" \
+        "${KANG}" --section "${SECTION}"
 
-# Load wrapped shim
-patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
-patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
-
-# Correct qcrilhook library location
-QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
-sed -i "s|/system/framework/qcrilhook.jar|/vendor/framework/qcrilhook.jar|g" "$QCRILHOOK"
-
-# Correct QtiTelephonyServicelibrary location
-TELESERVICELIB="$BLOB_ROOT"/vendor/etc/permissions/telephonyservice.xml
-sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/QtiTelephonyServicelibrary.jar|g" "$TELESERVICELIB"
-
-# Correct thermal config location
-THERENG="$BLOB_ROOT"/vendor/bin/thermal-engine
-sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "$THERENG"
-
-# Load camera configs from vendor
-CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
-sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
-
-# Get rid of libandroid on camera blobs
-patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmmcamera_vstab_module.so
-patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmot_ois_data.so
-
-"$MY_DIR"/setup-makefiles.sh
+source "${MY_DIR}/setup-makefiles.sh"
