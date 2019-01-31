@@ -66,4 +66,15 @@ patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
 CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
 sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
 
+# Load normal P libbinder and cutils
+CAMERAHAL="$BLOB_ROOT"/vendor/lib/hw/camera.msm8996.so
+CAMERAMODHAL="$BLOB_ROOT"/vendor/lib/hw/libcamera_mods_legacy_hal.so
+CAMERADAEMON="$BLOB_ROOT"/vendor/bin/mm-qcamera-daemon
+sed -i "s|libbinder.so|libPinder.so|g" "$CAMERAHAL"
+sed -i "s|libcutils.so|libPutils.so|g" "$CAMERAHAL"
+sed -i "s|libbinder.so|libPinder.so|g" "$CAMERAMODHAL"
+sed -i "s|libcutils.so|libPutils.so|g" "$CAMERAMODHAL"
+sed -i "s|libbinder.so|libPinder.so|g" "$CAMERADAEMON"
+sed -i "s|libcutils.so|libPutils.so|g" "$CAMERADAEMON"
+
 "$MY_DIR"/setup-makefiles.sh
