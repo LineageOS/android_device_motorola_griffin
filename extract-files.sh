@@ -56,11 +56,13 @@ fi
 setup_vendor "$DEVICE" "$VENDOR" "$LINEAGE_ROOT" false "$CLEAN_VENDOR"
 
 extract "$MY_DIR"/proprietary-files.txt "$SRC" "$SECTION"
+extract "$MY_DIR"/proprietary-files_griffin.txt "$SRC" "$SECTION"
 
 BLOB_ROOT="$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE"/proprietary
 
 # Load wrapped shim
 patchelf --add-needed libqsap_shim.so $BLOB_ROOT/vendor/lib64/libmdmcutback.so
+patchelf --add-needed libjustshoot_shim.so $BLOB_ROOT/vendor/lib/libjustshoot.so
 
 # Correct qcrilhook library location
 QCRILHOOK="$BLOB_ROOT"/vendor/etc/permissions/qcrilhook.xml
@@ -73,5 +75,13 @@ sed -i "s|/system/framework/QtiTelephonyServicelibrary.jar|/vendor/framework/Qti
 # Correct thermal config location
 THERENG="$BLOB_ROOT"/vendor/bin/thermal-engine
 sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "$THERENG"
+
+# Load camera configs from vendor
+CAMERA2_SENSOR_MODULES="$BLOB_ROOT"/vendor/lib/libmmcamera2_sensor_modules.so
+sed -i "s|/system/etc/camera/|/vendor/etc/camera/|g" "$CAMERA2_SENSOR_MODULES"
+
+# Get rid of libandroid on camera blobs
+patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmmcamera_vstab_module.so
+patchelf --remove-needed libandroid.so $BLOB_ROOT/vendor/lib/libmot_ois_data.so
 
 "$MY_DIR"/setup-makefiles.sh
