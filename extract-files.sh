@@ -85,6 +85,11 @@ function blob_fixup() {
     vendor/bin/thermal-engine)
         sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
         ;;
+
+    vendor/lib/hw/vulkan.msm8996.so | vendor/lib64/hw/vulkan.msm8996.so)
+        sed -i "s|vulkan.msm8953.so|vulkan.msm8996.so|g" "${2}"
+        ;;
+
     esac
 }
 
