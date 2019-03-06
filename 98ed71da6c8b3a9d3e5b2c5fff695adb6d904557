@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b05cf7fb_631c9a5d",
+        "filename": "extract-files.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 17117
+      },
+      "writtenOn": "2019-03-06T10:35:10Z",
+      "side": 1,
+      "message": "should be updated here too, my derp",
+      "revId": "98ed71da6c8b3a9d3e5b2c5fff695adb6d904557",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
