@@ -120,6 +120,11 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LineageActions
 
+# Codec2 modules
+PRODUCT_PACKAGES += \
+    com.android.media.swcodec \
+    libsfplugin_ccodec
+
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
     services-ext
