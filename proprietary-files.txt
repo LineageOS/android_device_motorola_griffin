@@ -326,28 +326,41 @@ vendor/lib64/libvpplibrary.so
 etc/permissions/com.motorola.moto.xml:vendor/etc/permissions/com.motorola.moto.xml
 etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola.motodisplay.xml
 
-# Perf
-lib/libqti_performance.so
-lib/libqti-perfd-client_system.so
-lib/vendor.qti.hardware.perf@1.0.so
-lib64/libqti_performance.so
-lib64/libqti-perfd-client_system.so
-lib64/vendor.qti.hardware.perf@1.0.so
-vendor/bin/energy-awareness
-vendor/bin/msm_irqbalance
-vendor/bin/hw/vendor.qti.hardware.perf@1.0-service
-vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc
-vendor/etc/perf/perfboostsconfig.xml
-vendor/lib/libperfgluelayer.so
-vendor/lib/libqti-perfd.so
-vendor/lib/libqti-perfd-client.so
-vendor/lib/libqti-util.so
-vendor/lib/vendor.qti.hardware.perf@1.0.so
-vendor/lib64/libperfgluelayer.so
-vendor/lib64/libqti-perfd.so
-vendor/lib64/libqti-perfd-client.so
-vendor/lib64/libqti-util.so
-vendor/lib64/vendor.qti.hardware.perf@1.0.so
+# Perf - from z2_plus - zui 4.0.247_181017
+lib64/vendor.qti.hardware.iop@1.0.so:vendor/lib64/vendor.qti.hardware.iop@1.0.so|ac828682fa359c83a758833a3c1f7973b6a6ecad
+lib/vendor.qti.hardware.iop@1.0.so:vendor/lib/vendor.qti.hardware.iop@1.0.so|d37e00b8da5fdfbffb0db41398e355daa0351665
+vendor/bin/hw/vendor.qti.hardware.iop@1.0-service|271a9e0522eeea121287c67da73b3f30c1406c67
+vendor/bin/hw/vendor.qti.hardware.perf@1.0-service|fe724e8cf3df26a1d4b4f1b662a9a5ee7aa67a05
+vendor/etc/init/vendor.qti.hardware.iop@1.0-service.rc|32890b3d05b3733ee92cdd030d5757ceab847848
+vendor/etc/init/vendor.qti.hardware.perf@1.0-service.rc|b50182aadab2e31409df61c523d0fb914a394e43
+vendor/etc/perf/perfboostsconfig.xml|57ab3e5177690fdb32908ff217853bb459b73a1e
+vendor/etc/perf/perf-profile0.conf|02204355bf29ceb0460cd53e6716552bb9d9b05f
+vendor/etc/perf/perf-profile1.conf|58c8333b58183fe2412061e5ff22c218b7da305c
+vendor/etc/perf/perf-profile2.conf|66ac3877bf0030b72c99107f665bb392538d0237
+vendor/etc/perf/perf-profile3.conf|3a1edfaeaf087effcadba7c652737ab6dd2d87b5
+vendor/etc/perf/perf-profile4.conf|0bc4779472306b1b225e9fc9be40af54e14e2266
+vendor/etc/perf/perf-profile5.conf|5bc85ed4a0f3cedd57e1e046416f423a83dc4f63
+vendor/etc/perf/perf-profile6.conf|910a193b8425bbe0080f746d6788e66986b2e762
+vendor/lib64/hw/vendor.qti.hardware.iop@1.0-impl.so|43dead8e04b41021b96e9ce417c73df1a6c1acd4
+vendor/lib64/libfeedbackhandler.so|0a670f30d8163c8c24f85beecbb58d00d3427160
+vendor/lib64/libperfgluelayer.so|18558d85826b31d75b14e4c1254d9efb7ee9eb30
+vendor/lib64/libqti-iopd.so|a630fe332cfb885672d0a81a8b658e232a353851
+vendor/lib64/libqti-iopd-client.so|8f0ba003fa8c4371ecbeec21a4dddfbe6d91d397
+vendor/lib64/libqti-perfd.so|f2bb67a9ca7ca93f6a1dc896b0e0081cd40a2fda
+vendor/lib64/libqti-perfd-client.so|00d137f33d7a54499130dba30c77eb3193f1c3cf
+vendor/lib64/libqti-util.so|aac6914c7be8e0d959b8fcb518f685f58c3a4dab
+vendor/lib64/vendor.qti.hardware.iop@1.0_vendor.so|666420e44d960e352186036a43ca4992d6010207
+vendor/lib64/vendor.qti.hardware.perf@1.0_vendor.so|08708fdeccbe811490d87db5c4fe40fce888995a
+vendor/lib/hw/vendor.qti.hardware.iop@1.0-impl.so|532a6d0560244986566ab293919476cf060b8916
+vendor/lib/libfeedbackhandler.so|4a2783a03cf4f9935eb63e4525621d70c7fb0462
+vendor/lib/libperfgluelayer.so|1486b7cbf5772606bf341fb43ab8d34bb89b1a5d
+vendor/lib/libqti-iopd.so|542e7d43ae6f26bd09b46827e4d96cd86c966c08
+vendor/lib/libqti-iopd-client.so|08512ba7d8d9e9af44276804842ecab36b385d08
+vendor/lib/libqti-perfd.so|6e7e7f3475907379eaee321b9192e15e929b1170
+vendor/lib/libqti-perfd-client.so|cae078e71a3fc2f3a3a9f28155efad678fb20b23
+vendor/lib/libqti-util.so|c285827ce550f235aa78c4e44f936868ff7e31f4
+vendor/lib/vendor.qti.hardware.iop@1.0_vendor.so|e645ae62f531addb8ac8a33306e34bea822a13b9
+vendor/lib/vendor.qti.hardware.perf@1.0_vendor.so|ffaaf98078ff3be80f8635de8475dd9862b00f21
 
 # Peripheral manager
 vendor/bin/pm-proxy
