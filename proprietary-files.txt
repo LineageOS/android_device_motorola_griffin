@@ -536,13 +536,6 @@ vendor/lib64/libqmimotext.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
 
-# Thermal
-vendor/bin/thermal-engine
--vendor/lib/libthermalclient.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
-vendor/etc/thermal-engine.conf
-
 # Time services
 -vendor/app/TimeService/TimeService.apk
 vendor/bin/time_daemon
