@@ -162,14 +162,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     Gello
 
-# GPS
-PRODUCT_PACKAGES += \
-    android.hardware.gnss@1.1-impl-qti:64 \
-    android.hardware.gnss@1.1-service-qti \
-    libgnss \
-    libcurl \
-    libgnsspps
-
 PRODUCT_PACKAGES += \
     apdr.conf \
     flp.conf \
