@@ -153,6 +153,7 @@ BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
+BOARD_RAMDISK_USE_XZ := true
 
 # Root
 BOARD_ROOT_EXTRA_SYMLINKS := \
