@@ -8,5 +8,6 @@ allow system_server mm-qcamerad:binder call;
 allow system_server crash_dump:process getpgid;
 allow system_server sysfs_vibrator:file read;
 
+get_prop(system_server, exported_camera_prop)
 get_prop(system_server, userspace_reboot_config_prop)
 get_prop(system_server, userspace_reboot_exported_prop)
