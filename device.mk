@@ -397,10 +397,6 @@ PRODUCT_SOONG_NAMESPACES += \
 PRODUCT_PACKAGES += \
     TetheringConfigOverlay
 
-# TextClassifier smart selection model files
-PRODUCT_PACKAGES += \
-    textclassifier.bundle1
-
 # Thermal
 PRODUCT_PACKAGES += \
     thermal.msm8996 \
