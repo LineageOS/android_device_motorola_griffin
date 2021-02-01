@@ -283,6 +283,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/whitelist_modservice.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/whitelist_modservice.xml
 
+# Motorola Health
+PRODUCT_PACKAGES += \
+    motorola.hardware.health@1.0.vendor
+
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \

@@ -562,6 +562,10 @@ vendor/lib64/vendor.qti.imsrtpservice@2.1.so
 vendor/lib64/libsensorndkbridge.so
 vendor/lib/libsensorndkbridge.so
 
+# Moto Health - from nash user 9 PPX29.159-24 e78f1 release-keys
+vendor/bin/hw/motorola.hardware.health@1.0-service|3d21763417a2087abf5ecce34a72d8bd56f2aa4f
+vendor/etc/init/motorola.hardware.health@1.0-service.rc|28f47f970593eb2c0768bd632a72f964146dcfe2
+
 # Radio - from deen PPK29.68-16-8
 vendor/bin/netmgrd|6e89c3eb89ba97a4d976b3249ee8991712906bf3
 vendor/bin/port-bridge|fbf8d9a26978fa6802a6e7baf0983c3aebafd7ce
