@@ -310,7 +310,6 @@ etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola
 -priv-app/DMService/DMService.apk
 -priv-app/SprintDM/SprintDM.apk
 
-
 ## Mods
 # Audio HAL ( For Audio Mods )
 #lib/hw/audio.primary.msm8996.so
