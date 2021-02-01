@@ -42,10 +42,6 @@ $(shell mkdir -p $(TARGET_OUT_VENDOR)/etc/firmware/wcd9320; \
 		$(TARGET_OUT_VENDOR)/etc/firmware/wcd9320/wcd9320_mad_audio.bin)
 
 
-$(shell mkdir -p $(TARGET_OUT_ETC)/firmware; \
-    ln -sf /dev/block/bootdevice/by-name/msadp \
-        $(TARGET_OUT_ETC)/firmware/msadp)
-
 #A/B builds require us to create the mount points at compile time.
 #Just creating it for all cases since it does not hurt.
 FIRMWARE_MOUNT_POINT := $(TARGET_OUT_VENDOR)/firmware_mnt
