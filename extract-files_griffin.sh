@@ -64,7 +64,9 @@ function blob_fixup() {
     case "${1}" in
 
         vendor/lib/libjustshoot.so)
-            "${PATCHELF}" --add-needed libjustshoot_shim.so "${2}"
+            for LIBJUSTSHOOT_SHIM in $(grep -L "libjustshoot_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed libjustshoot_shim.so "$LIBJUSTSHOOT_SHIM"
+            done
             ;;
 
         vendor/lib/libmmcamera2_sensor_modules.so)
@@ -88,7 +90,9 @@ function blob_fixup() {
             "${PATCHELF}" --remove-needed libandroidfw.so "${2}"
             "${PATCHELF}" --remove-needed libmedia.so "${2}"
             "${PATCHELF}" --remove-needed libnativehelper.so "${2}"
-            "${PATCHELF}" --add-needed libjni_shim.so "${2}"
+            for LIBJNI_SHIM in $(grep -L "libjni_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed libjni_shim.so "$LIBJNI_SHIM"
+            done
             ;;
 
         vendor/lib/libjustshoot.so | vendor/lib/libjscore.so)
@@ -105,7 +109,9 @@ function blob_fixup() {
 
         # memset shim
         vendor/bin/charge_only_mode)
-            "${PATCHELF}" --add-needed "libmemset_shim.so" "${2}"
+            for LIBMEMSET_SHIM in $(grep -L "libmemset_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libmemset_shim.so" "$LIBMEMSET_SHIM"
+            done
             ;;
     esac
 }

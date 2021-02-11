@@ -58,13 +58,17 @@ function blob_fixup() {
             ;;
         # Load wrapped shim
         vendor/lib64/libmdmcutback.so)
-            "${PATCHELF}" --add-needed "libqsap_shim.so" "${2}"
+            for LIBQSAP_SHIM in $(grep -L "libqsap_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libqsap_shim.so" "$LIBQSAP_SHIM"
+            done
             ;;
         # Fix missing symbols
         vendor/lib64/libril-qc-qmi-1.so)
-            "${PATCHELF}" --add-needed "libcutils_shim.so" "${2}"
+            for LIBCUTILS_SHIM in $(grep -L "libcutils_shim.so" "${2}"); do
+                "${PATCHELF}" --add-needed "libcutils_shim.so" "$LIBCUTILS_SHIM"
+            done
             ;;
-          
+
         # Fix thermal engine config path
         vendor/bin/thermal-engine)
             sed -i "s|/system/etc/thermal|/vendor/etc/thermal|g" "${2}"
