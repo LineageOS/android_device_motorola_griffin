@@ -97,10 +97,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.rat.wlan.chip.oem=WCN \
     persist.vendor.sys.cnd.iwlan=1
 
-# CoreSight
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.debug.coresight.config=stm-events
-
 # Graphics
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
