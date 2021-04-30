@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6e22e20e_cc88f331",
+        "filename": "sepolicy/vendor/hal_perf_default.te",
+        "patchSetId": 1
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 13648
+      },
+      "writtenOn": "2021-04-30T23:03:42Z",
+      "side": 1,
+      "message": "All this translates to:\n\n\u003e  set_prop(hal_perf_default, post_boot_prop);\n\u003e  set_prop(hal_perf_default, vendor_freq_prop);",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 4,
+        "endChar": 55
+      },
+      "revId": "f5e1fbf468aab1832eef1fa4266e33d6e477dfb2",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71",
+      "unresolved": true
+    }
+  ]
+}
