@@ -250,12 +250,6 @@
     <!-- The restoring is handled by modem if it is true -->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- MMS user agent string -->
-    <string name="config_mms_user_agent">motoxt1650</string>
-
-    <!-- MMS user agent prolfile url -->
-    <string name="config_mms_user_agent_profile_url">http://uaprof.vtext.com/mot/motoxt1650/motoxt1650.xml</string>
-
     <!-- Flag indicating if the speed up audio on mt call code should be executed -->
     <bool name="config_speed_up_audio_on_mt_calls">true</bool>
 
