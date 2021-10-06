@@ -1,3 +1,6 @@
+### All blobs from this list, unless pinned and noted as otherwise,
+##  are from griffin 8.0.0 OPL27.76-71-2-3 3 release-keys
+
 # ADSP
 etc/firmware/sheridan_vrgain.bin:vendor/firmware/sheridan_vrgain.bin
 etc/firmware/vrgain.bin:vendor/firmware/vrgain.bin
