@@ -42,16 +42,13 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 PRODUCT_NAME := lineage_griffin
 PRODUCT_BRAND := motorola
 PRODUCT_DEVICE := griffin
-PRODUCT_MODEL := Moto Z
+PRODUCT_MODEL := XT1650
 PRODUCT_MANUFACTURER := motorola
 PRODUCT_GMS_CLIENTID_BASE := android-motorola
 
-TARGET_VENDOR_PRODUCT_NAME := griffin_retail
-TARGET_VENDOR_DEVICE_NAME := griffin
-
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="griffin-user 8.0.0 OPL27.76-51 58 release-keys"
+    PRODUCT_NAME=griffin_retail \
+    PRIVATE_BUILD_DESC="griffin-user 8.0.0 OPL27.76-71-2-3 3 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := motorola/griffin/griffin:8.0.0/OPL27.76-51/58:user/release-keys
-TARGET_VENDOR := motorola
+BUILD_FINGERPRINT := motorola/griffin/griffin:8.0.0/OPL27.76-71-2-3/3:user/release-keys
