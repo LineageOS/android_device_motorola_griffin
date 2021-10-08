@@ -76,9 +76,9 @@ vendor/bin/motosh
 vendor/lib64/hw/sensorhub.msm8996.so
 vendor/lib64/sensors.iio.so
 vendor/lib64/sensors.msm8996.so
-vendor/lib64/sensors.ssc.so
+vendor/lib64/sensors.ssc.so|ee676e0086815b0a5afc6ab7eb91ba88f44d05d4
 vendor/lib64/libsensorhub.so
-vendor/etc/firmware/sensorhubfw.bin
+vendor/etc/firmware/sensorhubfw.bin|b956f1798d1afefca2ef6dbacc728969f6ea1dbc
 lib/libiio.so:vendor/lib/libiio.so
 lib64/libiio.so:vendor/lib64/libiio.so
 vendor/lib64/libsensor1.so
@@ -86,7 +86,7 @@ vendor/lib/libsensor1.so
 vendor/lib64/libsensor_reg.so
 vendor/lib/libsensor_reg.so
 lib/lib_motsensorlistener.so:vendor/lib/lib_motsensorlistener.so
-vendor/bin/sensors.qcom
+vendor/bin/sensors.qcom|9c9b6e3e8cae598a9cf9449093557f8ee8743450
 vendor/lib64/libsensorhubservice_jni.so
 vendor/lib64/sensor_calibrate.so
 
@@ -101,7 +101,7 @@ vendor/etc/qdcm_calib_data_mipi_mot_cmd_smd_QHD_546_p.xml|caf41edb56703651fabd8d
 
 # Camera
 vendor/bin/mm-qcamera-daemon
-vendor/lib/hw/camera.msm8996.so
+vendor/lib/hw/camera.msm8996.so|8ca7d04379c2c519ddba9e143cbdec521b7ba453
 vendor/lib/libmmcamera_interface.so
 vendor/lib/libmmjpeg_interface.so
 vendor/lib/libmm-qcamera.so
@@ -112,17 +112,17 @@ vendor/lib/libjpegehw.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_frame_algorithm.so
-vendor/lib/libmmcamera2_iface_modules.so
-vendor/lib/libmmcamera2_imglib_modules.so
+vendor/lib/libmmcamera2_iface_modules.so|5e216f8863a88b68b4822551dd0b5ac8436cd3df
+vendor/lib/libmmcamera2_imglib_modules.so|fbbedce51008d777fb243cf6d40179706af02a69
 vendor/lib/libmmcamera2_isp_modules.so|46418b40014e79c7a3b84efed68f7b0389f63619
 vendor/lib/libmmcamera2_is.so
-vendor/lib/libmmcamera2_mct.so
+vendor/lib/libmmcamera2_mct.so|05e532381bc4eb451e89c1cc60971ad03dd342f5
 vendor/lib/libmmcamera2_pp_buf_mgr.so
 vendor/lib/libmmcamera2_pproc_modules.so
 vendor/lib/libmmcamera2_q3a_core.so
-vendor/lib/libmmcamera2_sensor_modules.so
+vendor/lib/libmmcamera2_sensor_modules.so|020a44f62a3129085db8dca89331b71f3e5e9772
 vendor/lib/libmmcamera2_stats_algorithm.so
-vendor/lib/libmmcamera2_stats_modules.so
+vendor/lib/libmmcamera2_stats_modules.so|d50fec5f7510e4c3d01f7e75e26d518868e5c957
 vendor/lib/libmmcamera2_memleak.so
 vendor/lib/libmmcamera_dbg.so
 vendor/lib/libmmcamera_dummyalgo.so
@@ -168,17 +168,17 @@ vendor/lib/libactuator_lc898217xc.so
 vendor/lib/libflash_sky81298.so
 vendor/lib/libmotocalibration.so
 vendor/lib/libAisAdapterGlue.so
-vendor/lib/libmot_afd.so
+vendor/lib/libmot_afd.so|5634313fdf6382a4c6474e67ad6b16f508b22fef
 lib/libcamerabgprocservice.so:vendor/lib/libcamerabgprocservice.so
 vendor/lib/libcamerabgproc-jni.so
 vendor/lib64/libcamerabgproc-jni.so
 lib/lib_mottof.so:vendor/lib/lib_mottof.so
 lib/libmotimager_utils.so:vendor/lib/libmotimager_utils.so
-vendor/lib/libmmcamera_vstab_module.so
-lib/libjustshoot.so:vendor/lib/libjustshoot.so
+vendor/lib/libmmcamera_vstab_module.so|38c65ba0d4c389d07227e5346091a25025041428
+lib/libjustshoot.so:vendor/lib/libjustshoot.so|ff8bcc5e579dc3391f062936b8f63e3453a0acad
 lib/libAlAisWrap.so:vendor/lib/libAlAisWrap.so
 vendor/lib/libAisAdapter.so
-lib/libjscore.so:vendor/lib/libjscore.so
+lib/libjscore.so:vendor/lib/libjscore.so|673536ae12e1ce5601a96bc48e85089a3f5a013f
 vendor/lib/libmot_ois_data.so
 lib/libadvalgcore.so:vendor/lib/libadvalgcore.so
 lib/libmorpho_image_stabilizer4.so:vendor/lib/libmorpho_image_stabilizer4.so
@@ -312,7 +312,6 @@ etc/permissions/com.motorola.motodisplay.xml:vendor/etc/permissions/com.motorola
 # Carrier apps
 -priv-app/DMService/DMService.apk
 -priv-app/SprintDM/SprintDM.apk
-
 
 ## Mods
 # Audio HAL ( For Audio Mods )
