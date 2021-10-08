@@ -601,7 +601,7 @@ vendor/lib64/libqmimotext.so|160f0764206620bc3096ec3379d0c26aee2b9468
 vendor/lib64/libqrtr.so|6816fca79ac3cfed90f8549f9cc43cb80b4f7597
 vendor/lib64/libqsocket.so|81567230497785380e0fd2869b849a766f4f1590
 vendor/lib64/libril-qc-ltedirectdisc.so|2947ce976313ee88a4db33f383fda11370fb8434
-vendor/lib64/libril-qc-qmi-1.so|3f19badcf813405158e873e95efd060022523334
+vendor/lib64/libril-qc-qmi-1.so|7da29f5af4eb3c13cb33f3d9f763cf16e47553aa
 vendor/lib64/libril-qc-radioconfig.so|9e11bbcf7a324e7aeec0a9a425fcac01c9421748
 vendor/lib64/libril-qcril-hook-oem.so|98c6ceec729c71d2f9a91723acf2a45c9396e82b
 vendor/lib64/librilqmiservices.so|ecfa86bb8ae6bd168db0070183a8cfcbcc03ee7d
