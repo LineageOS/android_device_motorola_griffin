@@ -104,7 +104,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.display.disable_skip_validate=1 \
     sdm.debug.disable_skip_validate=1 \
     debug.sf.disable_backpressure=1 \
-    debug.sf.latch_unsignaled=1 \
     persist.demo.hdmirotationlock=false \
     debug.sf.enable_hwc_vds=1 \
     ro.hwui.texture_cache_flushrate=0.4 \
