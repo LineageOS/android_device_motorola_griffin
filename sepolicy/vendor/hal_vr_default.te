@@ -1,1 +1,0 @@
-allow hal_vr_default sensors_device:chr_file { ioctl open read write };
