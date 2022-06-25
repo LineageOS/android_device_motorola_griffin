@@ -198,7 +198,7 @@ TARGET_PER_MGR_ENABLED := true
 TARGET_USES_MEDIA_EXTENSIONS := true
 
 # Vendor security patch level
-VENDOR_SECURITY_PATCH := 2019-11-01
+VENDOR_SECURITY_PATCH := 2021-10-01
 
 # Wifi
 BOARD_HAS_QCOM_WLAN              := true

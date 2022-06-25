@@ -1,5 +1,5 @@
 ### All blobs from this list, unless pinned and noted as otherwise,
-##  are from deen_sprout-user 10 QPK30.54-8 6787 release-keys
+##  are from deen_sprout-user 10 QPK30.54-22-27 92b8a release-keys
 
 # ADSP
 vendor/bin/adsprpcd
