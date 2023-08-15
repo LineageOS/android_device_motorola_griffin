@@ -108,7 +108,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.enable_hwc_vds=1 \
     ro.hwui.texture_cache_flushrate=0.4 \
     ro.opengles.version=196609 \
-    debug.renderengine.backend=threaded \
     debug.sf.recomputecrop=0
 
 # Media
