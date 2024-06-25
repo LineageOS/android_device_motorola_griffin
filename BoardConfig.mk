@@ -152,6 +152,7 @@ LOC_HIDL_VERSION := 3.0
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
+TARGET_KERNEL_RECOVERY_CONFIG := griffin_recovery_defconfig
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/etc/fstab.qcom
 BOARD_RAMDISK_USE_XZ := true
 
