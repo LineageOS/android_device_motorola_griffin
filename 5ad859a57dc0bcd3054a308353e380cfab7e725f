@@ -1,4 +1,22 @@
 {
-  "comments": [],
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8c3cc6d2_9c5f5f8e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 34905
+      },
+      "writtenOn": "2025-02-17T22:23:51Z",
+      "side": 1,
+      "message": "Uploaded patch set 1.",
+      "revId": "5ad859a57dc0bcd3054a308353e380cfab7e725f",
+      "serverId": "1ec6b3db-b2c1-4fa4-84a2-4c7efe89ba71"
+    }
+  ],
   "submitRequirementResults": []
 }
